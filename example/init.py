@@ -11,7 +11,7 @@ from torch.optim.swa_utils import AveragedModel
 from example.config import TrainConfig
 from example.label_smoothing import LabelSmoothingLoss
 from example.models import MODELS, PyramidNet, WideResNet
-from sam import SAM
+from wasam import WASAM
 
 
 def optimizer_to(optim, device):
@@ -175,7 +175,7 @@ def get_optimizer(
     optimizer_name: str, config: TrainConfig, model: torch.nn.Module
 ) -> torch.optim.Optimizer:
     if optimizer_name == "sam":
-        return SAM(
+        return WASAM(
             params=model.parameters(),
             base_optimizer=get_optimizer(
                 optimizer_name=config.base_optimizer_name, config=config, model=model

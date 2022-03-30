@@ -9,16 +9,10 @@ from tqdm import tqdm
 
 from example.config import TrainConfig
 from example.dataset import get_train_valid_test_loader
-from example.init import (
-    get_criterion,
-    get_device,
-    get_lr_scheduler,
-    get_model,
-    get_optimizer,
-    init_wandb_results,
-)
+from example.init import (get_criterion, get_device, get_lr_scheduler,
+                          get_model, get_optimizer, init_wandb_results)
 from example.optimization_step import optimization_step
-from swa import MultipleSWAModels
+from swa_utils import MultipleSWAModels
 
 
 class Trainer:
