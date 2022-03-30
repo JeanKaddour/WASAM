@@ -1,7 +1,7 @@
 import torch
+from sam import SAM, disable_running_stats, enable_running_stats
 
 from example.config import TrainConfig
-from sam import SAM, disable_running_stats, enable_running_stats
 
 
 def get_gradient_norm(model: torch.nn.Module) -> float:
@@ -32,7 +32,6 @@ def SAM_optimization_step(
     disable_running_stats(model)
     criterion(input=model.forward(inputs), target=labels).backward()
     gradient_norm = get_gradient_norm(model=model)
-
     optimizer.second_step()
     step = {
         "loss": loss.item(),
