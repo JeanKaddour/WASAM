@@ -186,21 +186,6 @@ class WASAM(torch.optim.Optimizer):
         self.opt_state = self.base_optimizer.state
         self.base_optimizer.param_groups = self.param_groups
 
-    def add_param_group(self, param_group):
-        r"""Add a param group to the :class:`Optimizer` s `param_groups`.
-
-        This can be useful when fine tuning a pre-trained network as frozen
-        layers can be made trainable and added to the :class:`Optimizer` as
-        training progresses.
-
-        Args:
-            param_group (dict): Specifies what Tensors should be optimized along
-            with group specific optimization options.
-        """
-        param_group["n_avg"] = 0
-        param_group["step_counter"] = 0
-        self.base_optimizer.add_param_group(param_group)
-
     @staticmethod
     def bn_update(loader, model, device=None):
         r"""Updates BatchNorm running_mean, running_var buffers in the model.
