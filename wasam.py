@@ -30,6 +30,9 @@ class WASAM(torch.optim.Optimizer):
         super(WASAM, self).__init__(params, defaults)
 
         self.base_optimizer = base_optimizer
+        for group in self.param_groups:
+            group["n_avg"] = 0
+            group["step_counter"] = 0
 
     @torch.no_grad()
     def first_step(self, zero_grad: bool = True) -> None:
