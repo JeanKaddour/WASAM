@@ -135,13 +135,14 @@ python main.py
 If you find this repository useful, please consider citing the paper. 
 
 ```
-@misc{kaddour2022questions,
-      title={Questions for Flat-Minima Optimization of Modern Neural Networks}, 
-      author={Jean Kaddour and Linqing Liu and Ricardo Silva and Matt J. Kusner},
-      year={2022},
-      eprint={2202.00661},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{
+    kaddour2022when,
+    title={When Do Flat Minima Optimizers Work?},
+    author={Jean Kaddour and Linqing Liu and Ricardo Silva and Matt Kusner},
+    booktitle={Advances in Neural Information Processing Systems},
+    editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
+    year={2022},
+    url={https://openreview.net/forum?id=vDeh2yxTvuh}
 }
 ```
 
